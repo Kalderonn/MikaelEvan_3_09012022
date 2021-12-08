@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+}
+
 body {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -21,6 +25,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eaeaea;
+  padding: 15px 0;
+  font-weight: 700;
+  box-shadow: inset 0px 5px 15px -10px rgba(0, 0, 0, 0.55);
+}
+.location__icon {
+  margin-right: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
