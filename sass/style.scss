@@ -29,12 +29,17 @@ $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $back-color: #f6f6f6;
+$shadow: 0px 5px 10px 0px rgba(0,0,0,0.20);
 
 // mixins
 @mixin flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+@mixin hover {
+    box-shadow:  0px 10px 10px 0px rgba(0,0,0,0.40);
+	transition: 0.3s;
 }
 
 // header
@@ -62,23 +67,71 @@ header{
     padding: 40px 30px 55px 30px;
     &__title{
         margin-bottom: 15px;
+        font-weight: bolder;
     }
     &__text{
         margin-bottom: 30px;
         color: lighten($color: #000000, $amount: 40);
     }
     &__btn {
-        background: linear-gradient(to bottom, $secondary-color 0%, $primary-color 100%);
-        box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.20);
+        background: linear-gradient($secondary-color 0%, $primary-color 100%);
+        box-shadow: $shadow;
         border-radius: 30px;
         display: inline-block;
-        cursor: pointer;
         color:#ffffff;
         font-size: 16px;
         padding: 15px 25px;
         &:hover{
-            background: lighten($color: $primary-color, $amount: 10);
-            box-shadow:  0 5px 10px 0px rgba(0,0,0,0.32);
+            @include hover;
+            opacity: 0.8;
         }
+    }
+}
+
+// section Fonctionnement
+.tuto{
+    margin-top: 40px;
+    &__title{
+        padding-left: 20px;
+    }
+    &__container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    &__btn{
+        flex: 40%;
+        display: flex;
+        align-items: center;
+        padding: 25px;
+        margin: 10px;
+        border-radius: 25px;
+        background-color: $back-color;
+        box-shadow: $shadow;
+        &:hover{
+            @include hover;
+            background-color: lighten($primary-color, $amount: 35%);
+        }
+        &:hover :nth-child(2){
+            color: $primary-color;
+        }   
+    }
+    &__btn-nbr{
+        @include flex-center;
+        color: white;
+        background-color: $primary-color;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        position: relative;
+        left: -35px;
+    }
+    &__btn-icon{
+        color: lighten($color: #000000, $amount: 50);
+    }
+    &__btn-text{
+        font-size: 16px;
+        font-weight: bolder;
+        margin-left: 30px;
     }
 }
