@@ -57,8 +57,8 @@ header {
   margin-bottom: 30px;
   color: #666666;
 }
-.explore__btn {
-  background: linear-gradient(#FF79DA 0%, #9356DC 100%);
+.explore__button {
+  background: linear-gradient(#ff79da 0%, #9356dc 100%);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   border-radius: 30px;
   display: inline-block;
@@ -66,7 +66,7 @@ header {
   font-size: 16px;
   padding: 15px 25px;
 }
-.explore__btn:hover {
+.explore__button:hover {
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
   transition: 0.3s;
   opacity: 0.8;
@@ -83,7 +83,7 @@ header {
   flex-wrap: wrap;
   padding: 20px;
 }
-.tuto__btn {
+.tuto__button {
   flex: 40%;
   display: flex;
   align-items: center;
@@ -93,33 +93,84 @@ header {
   background-color: #f6f6f6;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
-.tuto__btn:hover {
+.tuto__button:hover {
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
   transition: 0.3s;
   background-color: #f2eafb;
 }
-.tuto__btn:hover :nth-child(2) {
-  color: #9356DC;
+.tuto__button:hover :nth-child(2) {
+  color: #9356dc;
 }
-.tuto__btn-nbr {
+.tuto__number {
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: #9356DC;
+  background-color: #9356dc;
   height: 25px;
   width: 25px;
   border-radius: 50%;
   position: relative;
   left: -35px;
 }
-.tuto__btn-icon {
+.tuto__icon {
   color: gray;
 }
-.tuto__btn-text {
+.tuto__text {
   font-size: 16px;
   font-weight: bolder;
   margin-left: 30px;
+}
+
+.restos {
+  background-color: #f6f6f6;
+  margin-top: 40px;
+  padding: 50px 20px;
+}
+.restos__title {
+  margin-bottom: 25px;
+}
+.restos__card {
+  position: relative;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+.restos__img {
+  display: block;
+  max-height: 175px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+.restos__body {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 0 15px 15px;
+  padding: 15px 15px;
+  background-color: white;
+}
+.restos__content {
+  line-height: 1.4;
+}
+
+.new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 80px;
+  background-color: #99e2d0;
+  color: #008766;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  border-radius: 2px;
+}
+
+.heart {
+  font-size: 25px;
+  margin: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
