@@ -1,6 +1,7 @@
 // general
 * {
   margin: 0;
+  padding: 0;
 }
 body {
   box-sizing: border-box;
@@ -23,6 +24,9 @@ p {
 a {
   text-decoration: none;
   color: black;
+}
+li {
+  list-style: none;
 }
 // variables
 $primary-color: #9356dc;
@@ -150,6 +154,9 @@ header {
     box-shadow: $shadow;
     border-radius: 15px;
     margin-bottom: 20px;
+    &:hover {
+      @include hover;
+    }
   }
   &__img {
     display: block;
@@ -187,4 +194,35 @@ header {
 .heart {
   font-size: 25px;
   margin: 10px;
+}
+
+// footer
+.footer {
+  background-color: #353535;
+  padding-bottom: 25px;
+  &__title {
+    color: white;
+    font-size: 20px;
+    font-family: "Shrikhand", sans-serif;
+    padding: 25px 0px 15px 25px;
+  }
+  &__container {
+    padding-left: 25px;
+  }
+  &__links {
+    display: inline-block;
+    color: white;
+    padding: 3px 0;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+  &__icon1 {
+    font-size: 12px;
+    margin-right: 17px;
+  }
+  &__icon2 {
+    font-size: 12px;
+    margin-right: 12px;
+  }
 }

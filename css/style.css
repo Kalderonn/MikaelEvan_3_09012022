@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
 }
 
 body {
@@ -23,6 +24,10 @@ p {
 a {
   text-decoration: none;
   color: black;
+}
+
+li {
+  list-style: none;
 }
 
 header {
@@ -137,6 +142,10 @@ header {
   border-radius: 15px;
   margin-bottom: 20px;
 }
+.restos__card:hover {
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
 .restos__img {
   display: block;
   max-height: 175px;
@@ -172,6 +181,36 @@ header {
 .heart {
   font-size: 25px;
   margin: 10px;
+}
+
+.footer {
+  background-color: #353535;
+  padding-bottom: 25px;
+}
+.footer__title {
+  color: white;
+  font-size: 20px;
+  font-family: "Shrikhand", sans-serif;
+  padding: 25px 0px 15px 25px;
+}
+.footer__container {
+  padding-left: 25px;
+}
+.footer__links {
+  display: inline-block;
+  color: white;
+  padding: 3px 0;
+}
+.footer__links:hover {
+  color: #ff79da;
+}
+.footer__icon1 {
+  font-size: 12px;
+  margin-right: 17px;
+}
+.footer__icon2 {
+  font-size: 12px;
+  margin-right: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
