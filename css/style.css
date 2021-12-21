@@ -30,6 +30,65 @@ li {
   list-style: none;
 }
 
+.loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+  opacity: 1;
+  animation: disappear 3s ease 0ms 1 normal forwards;
+}
+.loader__spinner {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 10px solid #f6f6f6;
+  border-top: 10px solid #9356dc;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  opacity: 1;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    border-top: 10px solid #9356dc;
+  }
+  25% {
+    transform: rotate(90deg);
+    border-top: 10px solid #99e2d0;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top: 10px solid #ff79da;
+  }
+  75% {
+    transform: rotate(270deg);
+    border-top: 10px solid #99e2d0;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top: 10px solid #ff79da;
+  }
+}
 header {
   display: flex;
   align-items: center;
