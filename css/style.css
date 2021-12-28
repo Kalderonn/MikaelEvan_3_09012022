@@ -4,6 +4,8 @@
 }
 
 body {
+  margin: auto;
+  max-width: 1920px;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
@@ -52,7 +54,7 @@ li {
   width: 120px;
   height: 120px;
   opacity: 1;
-  animation: spin 1s linear infinite;
+  animation: spin 1s linear 0ms 3 normal forwards;
 }
 
 @keyframes disappear {
@@ -114,6 +116,8 @@ header {
   padding: 40px 30px 55px 30px;
 }
 .explore__title {
+  margin: auto;
+  width: 75%;
   margin-bottom: 15px;
   font-weight: bolder;
 }
@@ -145,10 +149,12 @@ header {
 .tuto__container {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
+  justify-content: space-evenly;
+  padding: 20px 10px 20px 20px;
 }
 .tuto__button {
-  flex: 40%;
+  max-width: 325px;
+  flex-grow: 1;
   display: flex;
   align-items: center;
   padding: 25px;
@@ -189,21 +195,32 @@ header {
 .restos {
   background-color: #f6f6f6;
   margin-top: 40px;
-  padding: 50px 20px;
+  padding: 50px 10px;
 }
 .restos__title {
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+.restos__container {
+  display: flex;
+  flex-wrap: wrap;
 }
 .restos__card {
+  flex: 47%;
+  margin: 10px;
   display: block;
   position: relative;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
-  margin-bottom: 20px;
 }
 .restos__card:hover {
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
   transition: 0.3s;
+}
+@media only screen and (min-width: 1200px) {
+  .restos__card {
+    flex: 23%;
+  }
 }
 .restos__img {
   display: block;
@@ -241,7 +258,7 @@ header {
   font-size: 25px;
   margin: 10px;
 }
-.heart:hover {
+.heart--fill:hover {
   animation: fill 1s ease;
   background: linear-gradient(#ff79da 0%, #9356dc 100%);
   -webkit-background-clip: text;
@@ -270,8 +287,21 @@ header {
   font-family: "Shrikhand", sans-serif;
   padding: 25px 0px 15px 25px;
 }
+@media only screen and (min-width: 768px) {
+  .footer__title {
+    text-align: center;
+    padding-left: unset;
+  }
+}
 .footer__container {
   padding-left: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .footer__container {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+  }
 }
 .footer__links {
   display: inline-block;
@@ -311,11 +341,11 @@ header {
 }
 .menu__header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 0px 20px;
 }
 .menu__title {
+  align-self: center;
   font-family: "Shrikhand", sans-serif;
   font-size: 28px;
   font-weight: lighter;
@@ -378,15 +408,14 @@ header {
 .card__price {
   padding-top: 25px;
   font-weight: bold;
-  margin-left: 10px;
+  margin-right: 15px;
 }
 .card__check {
   height: 70px;
-  width: 70px;
+  width: 0%;
   opacity: 0;
   background-color: #99e2d0;
-  margin-left: 25px;
-  margin-right: -80px;
+  margin-left: 15px;
   border-radius: 0 10px 10px 0;
   display: flex;
   align-items: center;
@@ -405,7 +434,7 @@ header {
 }
 .card:hover .card__check {
   opacity: 1;
-  margin-right: 0px;
+  width: 25%;
 }
 .card:hover .card__icons {
   opacity: 1;

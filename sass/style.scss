@@ -4,6 +4,8 @@
   padding: 0;
 }
 body {
+  margin: auto;
+    max-width: 1920px;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
@@ -51,12 +53,34 @@ $shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+// responsive
+@mixin responsive($breakpoint) {
+
+  @if $breakpoint==tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktop-xl {
+    @media only screen and (min-width: 1200px){
+      @content;
+    }
+  }
+}
 // loader
 .loader {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(255, 255, 255,);
+  background-color: rgba(255, 255, 255);
   z-index: 1;
   opacity: 1;
   animation: disappear 3s ease 0ms 1 normal forwards;
@@ -73,17 +97,17 @@ $shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     width: 120px;
     height: 120px;
     opacity: 1;
-    animation: spin 1s linear infinite;
+    animation: spin 1s linear 0ms 3 normal forwards;
   }
 }
 @keyframes disappear {
   0% {
     opacity: 1;
   }
-  50%{
+  50% {
     opacity: 0.95;
   }
-  100%{
+  100% {
     opacity: 0;
     visibility: hidden;
   }
@@ -91,23 +115,23 @@ $shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-    border-top: 10px solid #9356dc;
+    border-top: 10px solid $primary-color;
   }
   25% {
     transform: rotate(90deg);
-    border-top: 10px solid #99e2d0;
+    border-top: 10px solid $tertiary-color;
   }
   50% {
     transform: rotate(180deg);
-    border-top: 10px solid #ff79da;
+    border-top: 10px solid $secondary-color;
   }
   75% {
     transform: rotate(270deg);
-    border-top: 10px solid #99e2d0;
+    border-top: 10px solid $tertiary-color;
   }
   100% {
     transform: rotate(360deg);
-    border-top: 10px solid #ff79da;
+    border-top: 10px solid $secondary-color;
   }
 }
 // header
@@ -133,6 +157,8 @@ header {
   text-align: center;
   padding: 40px 30px 55px 30px;
   &__title {
+    margin: auto;
+    width: 75%;
     margin-bottom: 15px;
     font-weight: bolder;
   }
@@ -164,10 +190,12 @@ header {
   &__container {
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
+    justify-content: space-evenly;
+    padding: 20px 10px 20px 20px;
   }
   &__button {
-    flex: 40%;
+    max-width: 325px;
+    flex-grow: 1;
     display: flex;
     align-items: center;
     padding: 25px;
@@ -206,18 +234,27 @@ header {
 .restos {
   background-color: $back-color;
   margin-top: 40px;
-  padding: 50px 20px;
+  padding: 50px 10px;
   &__title {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+  }
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
   }
   &__card {
+    flex: 47%;
+    margin: 10px;
     display: block;
     position: relative;
     box-shadow: $shadow;
     border-radius: 15px;
-    margin-bottom: 20px;
     &:hover {
       @include hover;
+    }
+    @include responsive(desktop-xl){
+      flex: 23%;
     }
   }
   &__img {
@@ -256,13 +293,15 @@ header {
 .heart {
   font-size: 25px;
   margin: 10px;
-  &:hover {
-    animation: fill 1s ease;
-    background: linear-gradient($secondary-color 0%, $primary-color 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
+  &--fill {
+    &:hover {
+      animation: fill 1s ease;
+      background: linear-gradient($secondary-color 0%, $primary-color 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
   }
 }
 
@@ -286,9 +325,18 @@ header {
     font-size: 20px;
     font-family: "Shrikhand", sans-serif;
     padding: 25px 0px 15px 25px;
+    @include responsive(tablet){
+      text-align: center;
+      padding-left: unset;
+    }
   }
   &__container {
     padding-left: 25px;
+    @include responsive(tablet){
+      display: flex;
+      justify-content: space-around;
+      padding: 25px;
+    }
   }
   &__links {
     display: inline-block;
@@ -329,16 +377,20 @@ header {
   margin-top: -40px;
   &__header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 0px 20px;
   }
   &__title {
+    align-self: center;
     font-family: "Shrikhand", sans-serif;
     font-size: 28px;
     font-weight: lighter;
   }
 }
+// .container{
+//   display: flex;
+//   justify-content: space-around;
+// }
 // dishes
 .dishes {
   margin: 30px 0px 40px 0px;
@@ -361,6 +413,7 @@ header {
     padding: 0px 10px;
   }
 }
+// card-plats
 .card {
   height: 70px;
   width: 100%;
@@ -391,15 +444,14 @@ header {
   &__price {
     padding-top: 25px;
     font-weight: bold;
-    margin-left: 10px;
+    margin-right: 15px;
   }
   &__check {
     height: 70px;
-    width: 70px;
+    width: 0%;
     opacity: 0;
     background-color: $tertiary-color;
-    margin-left: 25px;
-    margin-right: -80px;
+    margin-left: 15px;
     border-radius: 0 10px 10px 0;
     @include flex-center;
     transition: all 0.7s ease-in-out;
@@ -415,7 +467,7 @@ header {
     cursor: pointer;
     .card__check {
       opacity: 1;
-      margin-right: 0px;
+      width: 25%;
     }
     .card__icons {
       opacity: 1;
@@ -423,7 +475,7 @@ header {
     }
   }
 }
-
+// animation des plats
 @keyframes slide {
   0% {
     transform: translateY(30px);
@@ -469,3 +521,4 @@ header {
     }
   }
 }
+
