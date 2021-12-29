@@ -369,18 +369,21 @@ header {
   margin: 5px 0px 10px 0px;
 }
 .dishes__container {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 15px;
   padding: 0px 10px;
 }
 
 .card {
+  flex: 1;
+  min-width: 350px;
   height: 70px;
-  width: 100%;
   background-color: white;
   display: flex;
   align-items: center;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin: 5px;
   overflow: hidden;
   box-shadow: 2px 2px 10px #c4c3c0;
   opacity: 0;
