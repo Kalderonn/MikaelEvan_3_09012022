@@ -1,0 +1,38 @@
+.footer {
+  background-color: #353535;
+  padding-bottom: 25px;
+  &__title {
+    color: white;
+    font-size: 20px;
+    font-family: "Shrikhand", sans-serif;
+    padding: 25px 0px 15px 25px;
+    @include responsive(tablet) {
+      text-align: center;
+      padding-left: unset;
+    }
+  }
+  &__container {
+    padding-left: 25px;
+    @include responsive(tablet) {
+      display: flex;
+      justify-content: space-around;
+      padding: 25px;
+    }
+  }
+  &__links {
+    display: inline-block;
+    color: white;
+    padding: 3px 0;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+  &__icon1 {
+    font-size: 12px;
+    margin-right: 17px;
+  }
+  &__icon2 {
+    font-size: 12px;
+    margin-right: 12px;
+  }
+}

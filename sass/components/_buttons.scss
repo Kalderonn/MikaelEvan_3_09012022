@@ -1,0 +1,19 @@
+// boutton commander
+.order {
+  @include flex-center;
+  padding-top: 15px;
+  margin-bottom: 60px;
+  &__button {
+    background: $button-color;
+    box-shadow: $shadow;
+    border-radius: 30px;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 15px 50px;
+    &:hover {
+      @include hover;
+      opacity: 0.8;
+    }
+  }
+}

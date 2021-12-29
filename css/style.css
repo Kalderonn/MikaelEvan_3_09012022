@@ -32,31 +32,6 @@ li {
   list-style: none;
 }
 
-.loader {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  z-index: 1;
-  opacity: 1;
-  animation: disappear 3s ease 0ms 1 normal forwards;
-}
-.loader__spinner {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border: 10px solid #f6f6f6;
-  border-top: 10px solid #9356dc;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  opacity: 1;
-  animation: spin 1s linear 0ms 3 normal forwards;
-}
-
 @keyframes disappear {
   0% {
     opacity: 1;
@@ -91,6 +66,227 @@ li {
     border-top: 10px solid #ff79da;
   }
 }
+@keyframes fill {
+  0% {
+    height: 0%;
+    opacity: 0.5;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.loader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+  opacity: 1;
+  animation: disappear 3s ease 0ms 1 normal forwards;
+}
+.loader__spinner {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 10px solid #f6f6f6;
+  border-top: 10px solid #9356dc;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  opacity: 1;
+  animation: spin 1s linear 0ms 3 normal forwards;
+}
+
+.heart {
+  font-size: 25px;
+  margin: 10px;
+}
+.heart--fill:hover {
+  animation: fill 1s ease;
+  background: linear-gradient(#ff79da 0%, #9356dc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 80px;
+  background-color: #99e2d0;
+  color: #008766;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  border-radius: 2px;
+}
+
+.card {
+  flex: 1;
+  min-width: 350px;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin: 5px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px #c4c3c0;
+  opacity: 0;
+  animation: slide 1s ease 0ms 1 normal forwards;
+}
+.card__content {
+  padding-left: 10px;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.card__title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card__text {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card__price {
+  padding-top: 25px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+.card__check {
+  height: 70px;
+  width: 0%;
+  opacity: 0;
+  background-color: #99e2d0;
+  margin-left: 15px;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.7s ease-in-out;
+}
+.card__icons {
+  color: white;
+  font-size: 20px;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: all 0.7s ease-in-out;
+}
+.card:hover {
+  cursor: pointer;
+}
+.card:hover .card__check {
+  opacity: 1;
+  width: 25%;
+}
+.card:hover .card__icons {
+  opacity: 1;
+  transform: rotate(-360deg);
+}
+
+.card--delay1 {
+  animation-delay: 0.1s;
+}
+
+.card--delay2 {
+  animation-delay: 0.3s;
+}
+
+.card--delay3 {
+  animation-delay: 0.6s;
+}
+
+.card--delay4 {
+  animation-delay: 0.9s;
+}
+
+.order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  margin-bottom: 60px;
+}
+.order__button {
+  background: linear-gradient(#ff79da 0%, #9356dc 100%);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 15px 50px;
+}
+.order__button:hover {
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+  opacity: 0.8;
+}
+
+.footer {
+  background-color: #353535;
+  padding-bottom: 25px;
+}
+.footer__title {
+  color: white;
+  font-size: 20px;
+  font-family: "Shrikhand", sans-serif;
+  padding: 25px 0px 15px 25px;
+}
+@media only screen and (min-width: 768px) {
+  .footer__title {
+    text-align: center;
+    padding-left: unset;
+  }
+}
+.footer__container {
+  padding-left: 25px;
+}
+@media only screen and (min-width: 768px) {
+  .footer__container {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+  }
+}
+.footer__links {
+  display: inline-block;
+  color: white;
+  padding: 3px 0;
+}
+.footer__links:hover {
+  color: #ff79da;
+}
+.footer__icon1 {
+  font-size: 12px;
+  margin-right: 17px;
+}
+.footer__icon2 {
+  font-size: 12px;
+  margin-right: 12px;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -240,86 +436,6 @@ header {
   line-height: 1.4;
 }
 
-.new {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
-  width: 80px;
-  background-color: #99e2d0;
-  color: #008766;
-  position: absolute;
-  right: 10px;
-  top: 15px;
-  border-radius: 2px;
-}
-
-.heart {
-  font-size: 25px;
-  margin: 10px;
-}
-.heart--fill:hover {
-  animation: fill 1s ease;
-  background: linear-gradient(#ff79da 0%, #9356dc 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bold;
-}
-
-@keyframes fill {
-  0% {
-    height: 0%;
-    opacity: 0.5;
-  }
-  100% {
-    height: 100%;
-    opacity: 1;
-  }
-}
-.footer {
-  background-color: #353535;
-  padding-bottom: 25px;
-}
-.footer__title {
-  color: white;
-  font-size: 20px;
-  font-family: "Shrikhand", sans-serif;
-  padding: 25px 0px 15px 25px;
-}
-@media only screen and (min-width: 768px) {
-  .footer__title {
-    text-align: center;
-    padding-left: unset;
-  }
-}
-.footer__container {
-  padding-left: 25px;
-}
-@media only screen and (min-width: 768px) {
-  .footer__container {
-    display: flex;
-    justify-content: space-around;
-    padding: 25px;
-  }
-}
-.footer__links {
-  display: inline-block;
-  color: white;
-  padding: 3px 0;
-}
-.footer__links:hover {
-  color: #ff79da;
-}
-.footer__icon1 {
-  font-size: 12px;
-  margin-right: 17px;
-}
-.footer__icon2 {
-  font-size: 12px;
-  margin-right: 12px;
-}
-
 .fa-arrow-left {
   font-size: 20px;
   margin-left: -80px;
@@ -371,124 +487,348 @@ header {
 .dishes__container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 15px;
   padding: 0px 10px;
 }
 
-.card {
-  flex: 1;
-  min-width: 350px;
-  height: 70px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  margin: 5px;
-  overflow: hidden;
-  box-shadow: 2px 2px 10px #c4c3c0;
-  opacity: 0;
-  animation: slide 1s ease 0ms 1 normal forwards;
-}
-.card__content {
-  padding-left: 10px;
-  width: 90%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.card__title {
-  font-size: 18px;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.card__text {
-  font-size: 16px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.card__price {
-  padding-top: 25px;
-  font-weight: bold;
-  margin-right: 15px;
-}
-.card__check {
-  height: 70px;
-  width: 0%;
-  opacity: 0;
-  background-color: #99e2d0;
-  margin-left: 15px;
-  border-radius: 0 10px 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.7s ease-in-out;
-}
-.card__icons {
-  color: white;
-  font-size: 20px;
-  opacity: 0;
-  transform: rotate(0deg);
-  transition: all 0.7s ease-in-out;
-}
-.card:hover {
-  cursor: pointer;
-}
-.card:hover .card__check {
-  opacity: 1;
-  width: 25%;
-}
-.card:hover .card__icons {
-  opacity: 1;
-  transform: rotate(-360deg);
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
-@keyframes slide {
-  0% {
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.card--delay1 {
-  animation-delay: 0.1s;
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
 }
 
-.card--delay2 {
-  animation-delay: 0.3s;
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
 }
 
-.card--delay3 {
-  animation-delay: 0.6s;
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
-.card--delay4 {
-  animation-delay: 0.9s;
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
-.order {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 15px;
-  margin-bottom: 60px;
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
-.order__button {
-  background: linear-gradient(#ff79da 0%, #9356dc 100%);
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  display: inline-block;
-  color: #ffffff;
-  font-size: 16px;
-  padding: 15px 50px;
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
 }
-.order__button:hover {
-  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
-  transition: 0.3s;
-  opacity: 0.8;
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,62 @@
+// Disparition du loader
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+// Rotation du Loader
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    border-top: 10px solid $primary-color;
+  }
+  25% {
+    transform: rotate(90deg);
+    border-top: 10px solid $tertiary-color;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-top: 10px solid $secondary-color;
+  }
+  75% {
+    transform: rotate(270deg);
+    border-top: 10px solid $tertiary-color;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-top: 10px solid $secondary-color;
+  }
+}
+// Remplissage du coeur
+@keyframes fill {
+  0% {
+    height: 0%;
+    opacity: 0.5;
+  }
+  100% {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+// Animation des plats
+
+// Translation et apparition
+@keyframes slide {
+  0% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

@@ -1,0 +1,15 @@
+// heart
+.heart {
+  font-size: 25px;
+  margin: 10px;
+  &--fill {
+    &:hover {
+      animation: fill 1s ease;
+      background: linear-gradient($secondary-color 0%, $primary-color 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+  }
+}

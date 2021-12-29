@@ -1,0 +1,79 @@
+// Petites cartes des plats
+.card {
+  flex: 1;
+  min-width: 350px;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin: 5px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px #c4c3c0;
+  opacity: 0;
+  animation: slide 1s ease 0ms 1 normal forwards;
+  &__content {
+    padding-left: 10px;
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__title {
+    font-size: 18px;
+    margin-bottom: 5px;
+    @include text-nowrap;
+  }
+  &__text {
+    font-size: 16px;
+    @include text-nowrap;
+  }
+  &__price {
+    padding-top: 25px;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  &__check {
+    height: 70px;
+    width: 0%;
+    opacity: 0;
+    background-color: $tertiary-color;
+    margin-left: 15px;
+    border-radius: 0 10px 10px 0;
+    @include flex-center;
+    transition: all 0.7s ease-in-out;
+  }
+  &__icons {
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: all 0.7s ease-in-out;
+  }
+  &:hover {
+    cursor: pointer;
+    .card__check {
+      opacity: 1;
+      width: 25%;
+    }
+    .card__icons {
+      opacity: 1;
+      transform: rotate(-360deg);
+    }
+  }
+}
+// Delai avant demarrage de l'animation
+.card--delay1 {
+  animation-delay: 0.1s;
+}
+
+.card--delay2 {
+  animation-delay: 0.3s;
+}
+
+.card--delay3 {
+  animation-delay: 0.6s;
+}
+
+.card--delay4 {
+  animation-delay: 0.9s;
+}
