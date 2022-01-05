@@ -25,6 +25,7 @@
     padding: 3px 0;
     &:hover {
       color: $secondary-color;
+      transition: 0.3s;
     }
   }
   &__icon1 {
