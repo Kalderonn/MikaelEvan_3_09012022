@@ -91,7 +91,7 @@ li {
   width: 100%;
   background-color: white;
   z-index: 1;
-  animation: disappear 3s ease 0ms 1 normal forwards;
+  animation: disappear 3s linear 0ms 1 normal forwards;
 }
 .loader__spinner {
   position: absolute;
