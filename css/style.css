@@ -206,7 +206,7 @@ li {
   width: 25%;
 }
 .card:hover .card__icons {
-  animation: check-rotate 0.7s ease-in-out 0s 1 normal both;
+  animation: check-rotate 0.7s ease-in-out 0s 1 normal forwards;
 }
 
 .card--delay1 {
