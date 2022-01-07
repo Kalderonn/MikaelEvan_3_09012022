@@ -45,9 +45,6 @@
   &__icons {
     color: white;
     font-size: 20px;
-    opacity: 0;
-    transform: rotate(0deg);
-    transition: opacity 0.7s ease-in-out;
   }
   &:hover {
     cursor: pointer;
@@ -56,8 +53,7 @@
       width: 25%;
     }
     .card__icons {
-      opacity: 1;
-      animation: check-rotate 0.7s ease-in-out 0s 1 normal forwards;
+      animation: check-rotate 0.7s ease-in-out 0s 1 normal both;
     }
   }
 }
